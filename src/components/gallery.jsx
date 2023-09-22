@@ -64,7 +64,7 @@ export const Gallery = ({ loading, error, setLoading , galleryImages, setGallery
                 items={galleryImages}
                 // strategy={verticalListSortingStrategy}
               >
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10 p-4 sm:p-12">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10 p-6 sm:p-12">
                   {galleryImages.map((image) => {
                     return (
                       <SortableCard

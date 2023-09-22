@@ -44,18 +44,18 @@ export const SignUp = () => {
   };
 
   return (
-    <div className="p-2 sm:px-8 mx-auto flex flex-col justify-center my-auto min-w-[93%] md:min-w-[60%] sm:min-w-[80%]">
+    <div className="p-2 sm:px-8 mx-auto flex flex-col justify-center my-8 min-w-[93%] md:min-w-[50%] sm:min-w-[80%]">
       <h1 className="text-center font-bold text-[1.5rem] sm:text-[2rem] text-purple-900">
         Welcome
       </h1>
-      <p className="text-center pb-3 text-sm sm:text-base">Sign up to create your account</p>
-      <form className="flex text-sm sm:text-base bg-white flex-col gap-3 sm:gap-6 p-3 rounded sm:p-8 sm:py-10 justify-between shadow sm:shadow-md w-[100%]">
+      <p className="text-center pb-3">Sign up to create your account</p>
+      <form className="flex bg-white flex-col gap-3 sm:gap-6 p-3 rounded sm:p-8 sm:py-10 justify-between shadow sm:shadow-md w-[100%]">
         {error ? <span className="text-red-600 text-xs">{error}</span> : ""}
         <div className="flex flex-col justify-between">
           <label className="font-[500] py-1">Email Address</label>
           <input
             placeholder="Email address"
-            className="border rounded p-2 w-full"
+            className="border rounded p-2 w-full focus:outline-none focus:border-gray-400"
             value={email}
             required={true}
             onChange={(e) => setEmail(e.target.value)}
@@ -65,7 +65,7 @@ export const SignUp = () => {
           <label className="font-[500] py-1">Password</label>
           <input
             placeholder="Password"
-            className="border rounded p-2 w-full"
+            className="border rounded p-2 w-full focus:outline-none focus:border-gray-400"
             type="password"
             required
             value={password}
@@ -74,12 +74,12 @@ export const SignUp = () => {
         </div>
         <div className="flex flex-col items-center gap-2 py-2">
           <button
-            className="bg-purple-800 font-[500] hover:bg-purple-900 rounded-md py-2 px-10 w-full sm:w-[60%] text-white mt-2 mx-auto"
+            className="bg-purple-800 font-[500] hover:bg-purple-900 rounded-md py-3 px-10 w-full sm:w-[60%] text-white mt-2 mx-auto"
             onClick={handleSignUp}
           >
             Sign Up
           </button>
-          <p className="text-center text-sm sm:text-base">
+          <p className="text-center ">
             Already have an account?
             <Link
               className="text-purple-700 hover:text-purple-800 font-[600] hover:font-bold px-1"

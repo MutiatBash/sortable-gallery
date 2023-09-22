@@ -15,9 +15,9 @@ export const Navbar = ({ onSearch }) => {
       .then(() => {
         setTimeout(() => {
           setLoading(true);
+          alert("you are being logged out");
           navigate("/signin");
-        }, 2000);
-        alert("you are being logged out");
+        }, 1500);
       })
       .catch((error) => {
         console.error(error.message);

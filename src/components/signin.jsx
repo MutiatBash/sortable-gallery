@@ -47,9 +47,9 @@ export const SignIn = () => {
   }
 
   return (
-    <div className="p-2 sm:px-8 mx-auto flex flex-col justify-center my-auto min-w-[93%] md:min-w-[60%] sm:min-w-[80%]">
+    <div className="p-2 sm:px-8 mx-auto flex flex-col justify-center my-8 min-w-[93%] md:min-w-[50%] sm:min-w-[80%]">
       <h1 className="text-center font-bold text-[1.5rem] sm:text-[2rem] text-purple-900">Welcome Back</h1>
-      <p className="text-center pb-3 text-sm sm:text-base">Sign in to your account</p>
+      <p className="text-center pb-3">Sign in to your account</p>
       <form className="flex bg-white flex-col gap-3 sm:gap-6 p-3 rounded sm:p-8 sm:py-10 justify-between shadow sm:shadow-md w-[100%]">
         {error ? (<span className="text-red-600 text-xs">{error}</span>) : ""}
         <div className="flex flex-col justify-between">
@@ -66,7 +66,7 @@ export const SignIn = () => {
           <label className="font-[500] py-1">Password</label>
           <input
             placeholder="Password"
-            className="border rounded p-2 w-full"
+            className="border rounded p-2 w-full focus:outline-none focus:border-gray-400"
             type="password"
             required
             value={password}
