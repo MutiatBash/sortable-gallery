@@ -8,17 +8,20 @@ import {
 } from "firebase/auth";
 import { auth } from "../firebase";
 import { useNavigate, Link } from "react-router-dom";
+import { ThreeCircles, Oval } from "react-loader-spinner";
 
 export const SignUp = () => {
   const [user, setUser] = useState("");
   const [error, setError] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
   // SIGNUP USER
   const handleSignUp = async (e) => {
+    setLoading(true);
     e.preventDefault();
     if (!email.trim() || !password.trim()) {
       setError("All fields are required");
@@ -32,13 +35,17 @@ export const SignUp = () => {
         email,
         password
       );
-      // const currentUser = auth.currentUser;
+
       console.log(response);
-      alert("account created");
-      navigate("/signin");
+      setTimeout(() => {
+        setLoading(false);
+        navigate("/signin");
+      }, 1500);
+
+      alert("Your account has been created");
     } catch (error) {
       console.error(error.message);
-      //   alert(error.message);
+      setLoading(false);
       setError(error.message);
     }
   };
@@ -73,13 +80,23 @@ export const SignUp = () => {
           />
         </div>
         <div className="flex flex-col items-center gap-2 py-2">
-          <button
-            className="bg-purple-800 font-[500] hover:bg-purple-900 rounded-md py-3 px-10 w-full sm:w-[60%] text-white mt-2 mx-auto"
-            onClick={handleSignUp}
-          >
-            Sign Up
-          </button>
-          <p className="text-center ">
+          {loading ? (
+            <ThreeCircles
+              height="35"
+              width="40"
+              color="#6B21A8"
+              visible={true}
+              ariaLabel="three-circles-rotating"
+            />
+          ) : (
+            <button
+              className="bg-purple-800 font-[500] hover:bg-purple-900 rounded-md py-3 px-10 w-full sm:w-[60%] text-white mt-2 mx-auto"
+              onClick={handleSignUp}
+            >
+              Sign Up
+            </button>
+          )}
+          <p className="text-center pt-1">
             Already have an account?
             <Link
               className="text-purple-700 hover:text-purple-800 font-[600] hover:font-bold px-1"

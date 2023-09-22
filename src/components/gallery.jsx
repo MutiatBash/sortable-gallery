@@ -67,7 +67,7 @@ export const Gallery = ({ loading, error, setLoading , galleryImages, setGallery
                       <SortableCard
                         key={image.id}
                         image={image}
-                        onLoad={() => setLoading(false)}
+                        // onLoad={() => setLoading(false)}
                       />
                     );
                   })}

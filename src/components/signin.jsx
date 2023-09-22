@@ -34,19 +34,17 @@ export const SignIn = () => {
       console.log(response);
       setTimeout(() => {
         setLoading(false);
+        navigate("/home");
       }, 1500);
 
-      alert("You are being logged in");
-      navigate("/home");
-      setLoading(false);
+      //   alert("You are being logged in");
     } catch (error) {
       console.error(error.message);
+      setLoading(false);
       //   alert(error.message);
       setError(error.message);
-      setLoading(false);
     }
   };
-
 
   return (
     <div className="p-2 sm:px-8 mx-auto flex flex-col justify-center my-auto min-w-[93%] md:min-w-[50%] sm:min-w-[80%]">
@@ -60,7 +58,7 @@ export const SignIn = () => {
           <label className="font-[500] py-1">Email Address</label>
           <input
             placeholder="Email address"
-            className="border rounded p-2 w-full"
+            className="border rounded p-2 w-full focus:outline-none focus:border-gray-400"
             value={email}
             required={true}
             onChange={(e) => setEmail(e.target.value)}
@@ -80,7 +78,7 @@ export const SignIn = () => {
         <div className="flex flex-col items-center gap-2 py-2">
           {loading ? (
             <ThreeCircles
-              height="40"
+              height="35"
               width="40"
               color="#6B21A8"
               visible={true}
@@ -93,8 +91,8 @@ export const SignIn = () => {
             >
               Sign In
             </button>
-          )}{" "}
-          <p className="text-center">
+          )}
+          <p className="text-center pt-1">
             Don't have an account?
             <Link
               className="text-purple-700 hover:text-purple-800 font-[600] hover:font-bold px-1"
