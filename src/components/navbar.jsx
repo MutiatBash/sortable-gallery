@@ -10,12 +10,12 @@ export const Navbar = ({ onSearch }) => {
 
   // SIGNUP USER
   const handleSignOut = () => {
-    // setLoading(true);
+    setLoading(true);
     signOut(auth)
       .then(() => {
         setTimeout(() => {
-          setLoading(true);
-          alert("you are being logged out");
+          setLoading(false);
+          alert("You are being logged out");
           navigate("/signin");
         }, 1500);
       })
