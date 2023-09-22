@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <div className="bg-[#fdf8f4] min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col">
         <Routes>
           <Route exact path="/" element={<SignUp />} />
           <Route path="/signin" element={<SignIn />} />

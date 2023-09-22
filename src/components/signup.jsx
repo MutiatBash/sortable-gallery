@@ -38,51 +38,57 @@ export const SignUp = () => {
       navigate("/signin");
     } catch (error) {
       console.error(error.message);
-    //   alert(error.message);
+      //   alert(error.message);
       setError(error.message);
     }
   };
 
   return (
-    <div className="p-4 sm:p-12 mx-auto">
-      <h1 className="text-center font-bold text-[2rem] py-2">Sign Up</h1>
-      <form className="flex bg-white flex-col gap-3 sm:gap-5 p-3 sm:p-5 justify-between shadow-md max-w-xs sm:max-w-lg mx-auto">
-        <span className="text-red-600">{error}</span>
-        <div className="flex flex-col sm:flex-row gap-3 justify-between items-center">
-          <label className="font-bold py-2">Email Address:</label>
+    <div className="p-2 sm:px-8 mx-auto flex flex-col justify-center my-auto min-w-[93%] md:min-w-[60%] sm:min-w-[80%]">
+      <h1 className="text-center font-bold text-[1.5rem] sm:text-[2rem] text-purple-900">
+        Welcome
+      </h1>
+      <p className="text-center pb-3 text-sm sm:text-base">Sign up to create your account</p>
+      <form className="flex text-sm sm:text-base bg-white flex-col gap-3 sm:gap-6 p-3 rounded sm:p-8 sm:py-10 justify-between shadow sm:shadow-md w-[100%]">
+        {error ? <span className="text-red-600 text-xs">{error}</span> : ""}
+        <div className="flex flex-col justify-between">
+          <label className="font-[500] py-1">Email Address</label>
           <input
             placeholder="Email address"
-            className="border rounded p-2 sm:w-[19rem]"
+            className="border rounded p-2 w-full"
             value={email}
+            required={true}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div className="flex flex-col sm:flex-row gap-3 justify-between items-center">
-          <label className="font-bold py-2">Password:</label>
+        <div className="flex flex-col justify-between">
+          <label className="font-[500] py-1">Password</label>
           <input
             placeholder="Password"
-            className="border rounded p-2 sm:w-[19rem]"
+            className="border rounded p-2 w-full"
             type="password"
+            required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button
-          className="bg-purple-700 rounded py-2 px-10 w-[60%] text-white my-3 sm:my-4 mx-auto"
-          onClick={handleSignUp}
-        >
-          Sign Up
-        </button>
-        <p className="text-center ">
-          Already have an account?
-
-          <Link
-            className="text-purple-500 font-bold px-1"
-            to="/signin" 
+        <div className="flex flex-col items-center gap-2 py-2">
+          <button
+            className="bg-purple-800 font-[500] hover:bg-purple-900 rounded-md py-2 px-10 w-full sm:w-[60%] text-white mt-2 mx-auto"
+            onClick={handleSignUp}
           >
-             Sign In
-          </Link>
-        </p>
+            Sign Up
+          </button>
+          <p className="text-center text-sm sm:text-base">
+            Already have an account?
+            <Link
+              className="text-purple-700 hover:text-purple-800 font-[600] hover:font-bold px-1"
+              to="/signin"
+            >
+              Sign In
+            </Link>
+          </p>
+        </div>
       </form>
     </div>
   );

@@ -25,11 +25,11 @@ export const Home = () => {
   }
 
   useEffect(() => {
-    window.onload = () => {
+    // window.onload = () => {
       setTimeout(() => {
         setLoading(false);
       }, 1000);
-    };
+    // };
   }, []);
 
   return (

@@ -30,14 +30,14 @@ export const Navbar = ({ onSearch }) => {
   return (
     <div className="flex justify-between items-center p-3 sm:py-4 sm:px-12 bg-white fixed top-0 w-full z-10">
       {loading ? <p> Logging out....</p> : ""}
-      <div className="rounded-full px-2 py-1 sm:px-4 sm:py-[0.8rem] bg-[#fdf8f4] font-bold">
-        <p className="text-[0.8rem] sm:text-base">M</p>
+      <div className="rounded-full px-2 py-1 sm:px-4 sm:py-[0.8rem] bg-purple-900 font-bold">
+        <p className="text-[0.8rem] sm:text-base text-white">M</p>
       </div>
       <Search onSearch={onSearch} />
       <p>
         <Link
           to="/signin"
-          className="cursor-pointer font-bold hover:text-purple-800 text-[0.8rem] sm:text-base"
+          className="cursor-pointer font-[600] hover:text-purple-800 text-[0.8rem] sm:text-base"
           onClick={handleSignOut}
         >
           Sign out

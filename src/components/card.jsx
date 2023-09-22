@@ -16,10 +16,10 @@ export const SortableCard = ({ image, onLoad }) => {
       {...attributes}
       style={style}
       {...listeners}
-      className="shadow-sm rounded bg-[#fffcf9]"
+      className="shadow rounded bg-[#fffcf9]"
     >
       <img src={image.src} onLoad={onLoad} />
-      <p className="p-5">{image.tag}</p>
+      <p className="p-4 sm:p-5">{image.tag}</p>
     </div>
   );
 };
