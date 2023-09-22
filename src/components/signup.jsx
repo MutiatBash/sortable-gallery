@@ -44,7 +44,7 @@ export const SignUp = () => {
   };
 
   return (
-    <div className="p-2 sm:px-8 mx-auto flex flex-col justify-center my-8 min-w-[93%] md:min-w-[50%] sm:min-w-[80%]">
+    <div className="p-2 sm:px-8 mx-auto flex flex-col justify-center my-auto min-w-[93%] md:min-w-[50%] sm:min-w-[80%]">
       <h1 className="text-center font-bold text-[1.5rem] sm:text-[2rem] text-purple-900">
         Welcome
       </h1>

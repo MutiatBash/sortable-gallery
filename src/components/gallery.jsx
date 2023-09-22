@@ -12,12 +12,9 @@ import {
   verticalListSortingStrategy,
   arrayMove,
 } from "@dnd-kit/sortable";
-import { Search } from "./search";
-import { images } from "../images";
 import { useState, useContext, useEffect } from "react";
 
 export const Gallery = ({ loading, error, setLoading , galleryImages, setGalleryImages}) => {
-  // const [galleryImages, setGalleryImages] = useState(images);
   const sensors = useSensors(
     useSensor(TouchSensor, {
       activationConstraint: {
@@ -64,7 +61,7 @@ export const Gallery = ({ loading, error, setLoading , galleryImages, setGallery
                 items={galleryImages}
                 // strategy={verticalListSortingStrategy}
               >
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10 p-6 sm:p-12">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10 p-[1.8rem] sm:p-12">
                   {galleryImages.map((image) => {
                     return (
                       <SortableCard
