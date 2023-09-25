@@ -18,7 +18,7 @@ export const SignIn = () => {
 
   const navigate = useNavigate();
 
-  // SIGNUP USER
+  // SIGNIN USER
   const handleSignIn = async (e) => {
     setLoading(true);
     e.preventDefault();
@@ -40,9 +40,17 @@ export const SignIn = () => {
       //   alert("You are being logged in");
     } catch (error) {
       console.error(error.message);
+      const customError =
+        error.code === "auth/user-not-found"
+          ? "User not found"
+          : error.code === "auth/email-already-exist"
+          ? "A user with this email exists"
+          : error.code === "auth/invalid-login-credentials"
+          ? "Email or Password is incorrect" :  error.code === "auth/network-request-failed" ? "Please check your network connection"
+          :"";
       setLoading(false);
       //   alert(error.message);
-      setError(error.message);
+      setError(customError);
     }
   };
 
@@ -53,7 +61,7 @@ export const SignIn = () => {
       </h1>
       <p className="text-center pb-3">Sign in to your account</p>
       <form className="flex bg-white flex-col gap-3 sm:gap-6 p-3 rounded sm:p-8 sm:py-10 justify-between shadow sm:shadow-md w-[100%]">
-        {error ? <span className="text-red-600 text-xs">{error}</span> : ""}
+        {error && error ? <span className="text-red-600 text-xs">{error}</span> : ""}
         <div className="flex flex-col justify-between">
           <label className="font-[500] py-1">Email Address</label>
           <input
