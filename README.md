@@ -4,6 +4,10 @@
 
 [Link to live site](https://sortable-gallery.netlify.app)
 
+**Login using this details**
+**Email**: user@example.com 
+**Password**: 1Password
+
 ## Project Overview
 
 This is a wep application that features a responsive image gallery with drag-and-drop functionality. Users can sign up to view images,sort them using the drag and drop feature, as well as search for images based on their tags.
