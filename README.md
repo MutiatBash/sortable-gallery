@@ -6,7 +6,7 @@
 
 **Login using this details**
 
-**Email**: user@example.com 
+**Email**: user@example.com
 **Password**: 1Password
 
 ## Project Overview
