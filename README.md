@@ -5,6 +5,7 @@
 [Link to live site](https://sortable-gallery.netlify.app)
 
 **Login using this details**
+
 **Email**: user@example.com 
 **Password**: 1Password
 
